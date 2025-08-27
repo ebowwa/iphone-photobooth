@@ -30,16 +30,29 @@ brew install ffmpeg     # For audio/video merging
 
 ## Usage
 
+### Quick Start
+
+```bash
+# USB camera mode (recommended)
+python main.py usb
+
+# List available cameras
+python main.py list
+
+# RTSP streaming mode
+python main.py rtsp --url rtsp://192.168.1.100:554/live
+```
+
 ### USB Connection (Continuity Camera)
 
 For iPhone with iOS 16+ connected via USB:
 
 ```bash
-# Run with auto-detection
-python iphone_camera_with_audio.py
+# Auto-detect camera
+python main.py usb
 
-# Or specify camera index
-python iphone_camera_with_audio.py --camera 0
+# Specify camera index
+python main.py usb --camera 0
 ```
 
 ### RTSP Streaming
@@ -48,11 +61,7 @@ For wireless streaming using RTSP:
 
 1. Install LARIX Broadcaster (or similar) on iPhone
 2. Configure RTSP server in the app
-3. Run the receiver:
-
-```bash
-python rtsp_receiver.py --url rtsp://[iPhone-IP]:554/live
-```
+3. Run: `python main.py rtsp --url rtsp://[iPhone-IP]:554/live`
 
 ## Controls
 

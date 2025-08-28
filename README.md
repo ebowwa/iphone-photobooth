@@ -49,10 +49,10 @@ For iPhone with iOS 16+ connected via USB:
 
 ```bash
 # Auto-detect camera
-python main.py usb
+uv run main.py usb
 
 # Specify camera index
-python main.py usb --camera 0
+uv run main.py usb --camera 0
 ```
 
 ### RTSP Streaming
